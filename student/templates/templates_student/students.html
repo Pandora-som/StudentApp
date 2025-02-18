@@ -1,0 +1,7 @@
+<h1>Список студентов</h1>
+<ul>
+    {% for student in students %}
+    <li>{{student.secondname}} {{student.name}} {{student.thirdname}} : {{student.number_group.name_group}}</li>
+    {% endfor %}
+</ul>
+

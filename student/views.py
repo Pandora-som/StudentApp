@@ -1,10 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import Product
+from .models import Students
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
-def products(request):
-    prods = Product.objects.all()
-    return render(request,"templates_student/products.html", {"products": prods})
+def students(request):
+     prods = Students.objects.all()
+     return render(request,"templates_student/students.html", {"students": prods})
+
