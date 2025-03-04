@@ -1,0 +1,17 @@
+{% extends 'templates_student/base.html' %}
+{% block title %}Электронный журнал{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block body %}
+<ul>
+    {% for group in groups %}
+    <li>{{group.secondname}} {{group.name}} {{group.thirdname}} : {{group.number_group.name_group}}</li>
+    {% endfor %}
+</ul>
+{%endblock%}
+</html>

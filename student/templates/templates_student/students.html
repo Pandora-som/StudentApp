@@ -1,7 +1,9 @@
-<h1>Список студентов</h1>
+{% extends 'templates_student/base.html' %}
+{% block title %}Электронный журнал{% endblock %}
+{% block body %}<h1>Список студентов</h1>
 <ul>
     {% for student in students %}
     <li>{{student.secondname}} {{student.name}} {{student.thirdname}} : {{student.number_group.name_group}}</li>
     {% endfor %}
 </ul>
-
+{% endblock %}
