@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="{% static '/css/main.css '%}">
 </head>
 <body>
-    <header>
-        <div>Электронный журнал</div>
-    </header>
+   
+        <div class="header-line">
+            <a href="{% url 'student:index' %}">Главная страница</a>
+            <a href="{% url 'student:students' %}">Студенты</a>
+            <a href="{% url 'student:groups' %}">Группы</a>
+        </div>
+   
     {% block body %}
     
     {% endblock %}
 </body>
 </html>
+

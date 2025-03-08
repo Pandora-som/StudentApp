@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import Students
 from .models import Groups
 
@@ -8,9 +8,12 @@ def index(request):
 
 def students(request):
      prods = Students.objects.all()
-     return render(request,"templates_student/students.html", {"students": prods})
+     return render(request, "templates_student/students.html", {"students": prods})
 
 def help(request):
      prods = Groups.objects.all()
      return render(request,"templates_student/student_groups.html",{"help": prods} )
 
+def student_info(request, students_id):
+     prods = get_object_or_404(Students, pk=students_id)
+     return render(request,"templates_student/student_info.html", {"student_info": prods})

@@ -8,11 +8,11 @@
     <title>Document</title>
 </head>
 {% block body %}
-<h1>Список групп</h1>
+<h1>Подробная информация о студенте</h1>
 <ul>
-    {% for group in help %}
-    <li>{{group.name_group}}</li>
-    {% endfor %}
+    {% comment %} {% for student in student_info %} {% endcomment %}
+    <li>{{student_info.secondname}} {{student_info.name}} {{student_info.thirdname}}</li>
+    {% comment %} {% endfor %} {% endcomment %}
 </ul>
 {%endblock%}
 </html>

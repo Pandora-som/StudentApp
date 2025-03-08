@@ -1,9 +1,22 @@
 {% extends 'templates_student/base.html' %}
 {% block title %}Электронный журнал{% endblock %}
-{% block body %}<h1>Список студентов</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% block body %}
+<h1>Список студентов</h1>
 <ul>
     {% for student in students %}
-    <li>{{student.secondname}} {{student.name}} {{student.thirdname}} : {{student.number_group.name_group}}</li>
+    <li><a href="{% url 'student:students_info' student.id %}">{{student.secondname}} {{student.name}} {{student.thirdname}}</a> : 
+        <a href="{% url 'student:groups' %}">{{student.number_group.name_group}}</a></li>
     {% endfor %}
 </ul>
-{% endblock %}
+{%endblock%}
+
+</html>
+
