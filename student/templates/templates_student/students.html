@@ -13,7 +13,7 @@
 <ul>
     {% for student in students %}
     <li><a href="{% url 'student:students_info' student.id %}">{{student.secondname}} {{student.name}} {{student.thirdname}}</a> : 
-        <a href="{% url 'student:groups' %}">{{student.number_group.name_group}}</a></li>
+        {{student.number_group.name_group}}</li>
     {% endfor %}
 </ul>
 {%endblock%}

@@ -1,0 +1,23 @@
+{% extends 'templates_student/base.html' %}
+{% block title %}Информация о группах{% endblock %}
+{% comment %} {%load static%} {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+{% block body %}
+<h1>Подробная информация о группе</h1>
+
+<ul>
+    {% for info_groups in info_group %}
+    <li>{{info_groups.secondname}} {{info_groups.name}} {{info_groups.thirdname}} : 
+        {{info_groups.status.name_status}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+</html>

@@ -17,3 +17,10 @@ def help(request):
 def student_info(request, students_id):
      prods = get_object_or_404(Students, pk=students_id)
      return render(request,"templates_student/student_info.html", {"student_info": prods})
+
+# def info_group(request, groups_id):
+#      prods = get_object_or_404(Students, pk=groups_id)
+#      return render(request,"templates_student/about_group.html",{"info_group": prods} )
+def info_group(request, groups_id):
+     prods = Students.objects.filter(number_group=groups_id)
+     return render(request,"templates_student/about_group.html",{"info_group": prods} )

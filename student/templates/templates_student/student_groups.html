@@ -11,7 +11,7 @@
 <h1>Список групп</h1>
 <ul>
     {% for group in help %}
-    <li>{{group.name_group}}</li>
+    <li><a href="{% url 'student:infos_group' group.id %}">{{group.name_group}}</a></li>
     {% endfor %}
 </ul>
 {%endblock%}

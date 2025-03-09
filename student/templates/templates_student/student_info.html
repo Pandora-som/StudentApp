@@ -11,7 +11,7 @@
 <h1>Подробная информация о студенте</h1>
 <ul>
     {% comment %} {% for student in student_info %} {% endcomment %}
-    <li>{{student_info.secondname}} {{student_info.name}} {{student_info.thirdname}}</li>
+    <li>{{student_info.secondname}} {{student_info.name}} {{student_info.thirdname}} {{student_info.birthday}} {{student_info.status.name_status}}</li>
     {% comment %} {% endfor %} {% endcomment %}
 </ul>
 {%endblock%}

@@ -5,16 +5,25 @@ class Groups(models.Model):
 
     def __str__(self):
         return self.name_group
+ 
+class Status(models.Model):
+    name_status = models.CharField(max_length=25)
     
+    def __str__(self):
+        return self.name_status      
 class Students(models.Model):
     number_group = models.ForeignKey(Groups, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     secondname = models.CharField(max_length=100)
     thirdname = models.CharField(max_length=100)
-
+    birthday = models.DateField()
+    status = models.ForeignKey(Status, null=True, on_delete=models.SET_NULL)
+    
     def __str__(self):
         return self.name
     
+    
+
 # class Category(models.Model):
 #     name=models.CharField(max_length=255)
 
