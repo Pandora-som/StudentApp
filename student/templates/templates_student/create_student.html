@@ -1,0 +1,45 @@
+{% extends 'templates_student/base.html' %}
+{% block title %}Создание студента{% endblock %}
+
+{% block body %}
+<h1>Создание студента</h1>
+<form action="{% url 'student:save' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <div>
+            <label for="secondname">Фамилия:</label>
+            <input name="secondname" type="text" id="secondname">
+        </div>
+
+        <div>
+            <label for="name">Имя:</label>
+            <input name="name" type="text" id="name">
+        </div>
+
+        <div>
+            <label for="thirdname">Отчество:</label>
+            <input name="thirdname" type="text" id="thirdname">
+        </div>
+
+        <div>
+            <label for="birthday">Дата рождения:</label>
+            <input name="birthday" type="date" id="birthday">
+        </div>
+
+        {% for group in groups %}
+            <div>
+                <label for="number_group">Группа:{{group.name_group}}</label>
+                <input name="number_group" type="checkbox" value="{{ group.id }}" id="number_group">
+            </div> 
+        {% endfor %}
+
+        {% for status in statuses %}
+        <div>
+            <label for="status">Статус:{{status.name_status}}</label>
+            <input name="status" type="radio" value="{{ status.id }}" id="status">
+        </div>
+        {% endfor %}
+        <button type="submit">Создать студента</button>
+    </div>
+</form>
+{% endblock %}

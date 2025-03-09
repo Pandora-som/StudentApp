@@ -16,11 +16,6 @@
     список групп и подробную информацию по разделам.
 </p>
 
-{% comment %} <ul>
-    {% for student in students %}
-    <li><a href="{% url 'student:students_info' student.id %}">{{student.secondname}} {{student.name}} {{student.thirdname}}</a> : 
-        <a href="{% url 'student:groups' %}">{{student.number_group.name_group}}</a></li>
-    {% endfor %}
-</ul> {% endcomment %}
+<a href="{% url 'student:create' %}">+ Создать студента</a>
 {% endblock %}
 </html>
